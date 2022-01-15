@@ -8,7 +8,7 @@ import csv
 url = 'https://stroka.kg/kupit-kvartiru/'
 
 HEADER = {
-        'user-agent' :'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
+    'user-agent' :'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
 }
 
 baza = requests.get(url, headers=HEADER, verify=False)
@@ -28,8 +28,8 @@ for item in posts:
         })
 pp(new_list)
 
-with open('fileTent', 'a') as file:
-    writer = csv.writer(file, delimiter= ' ' )
+with open('fileTent.csv', 'a') as file:
+    writer = csv.writer(file, delimiter= ';' )
 
     writer.writerow(['price', 'description', 'link'])
 
